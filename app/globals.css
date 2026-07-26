@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(93, 10, 20, 0.035) 1px, transparent 1px),
+    #ffffff;
+  background-size: 112px 112px, auto;
+  color: #5d0a14;
+}
+
+::selection {
+  background: rgba(93, 10, 20, 0.2);
+}
+
+.glass {
+  border: 1px solid rgba(93, 10, 20, 0.18);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 22px 60px rgba(93, 10, 20, 0.12);
+}
+
+.portfolio-card {
+  border: 1px solid rgba(93, 10, 20, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 10px 12px 0 rgba(93, 10, 20, 0.07), 0 18px 55px rgba(93, 10, 20, 0.08);
+}
+
+.premium-card {
+  border: 1px solid rgba(93, 10, 20, 0.18);
+  background: #ffffff;
+  box-shadow: 0 28px 60px rgba(93, 10, 20, 0.12);
+}
+
+.burgundy-panel {
+  border: 1px solid rgba(244, 225, 199, 0.22);
+  background: linear-gradient(135deg, #2a0509, #5d0a14 52%, #76131e);
+  color: #f4e1c7;
+}
+
+.section-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.ornament {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  height: 1px;
+  width: 3rem;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.font-sans {
+  font-family: var(--font-inter, Inter), Avenir Next, ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), Georgia, Times New Roman, serif;
+}
