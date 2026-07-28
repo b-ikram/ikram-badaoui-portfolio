@@ -69,8 +69,8 @@ export default function Home() {
             </h1>
 
             {/* 3. Intro Paragraph */}
-            <p className="max-w-xl text-base sm:text-lg leading-relaxed text-zinc-800">
-              {profile.intro}
+            <p className="max-w-xl text-sm sm:text-base leading-relaxed text-zinc-800 whitespace-pre-line">
+            {profile.intro}
             </p>
 
             {/* 4. Action Buttons */}
