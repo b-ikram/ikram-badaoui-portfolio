@@ -236,15 +236,7 @@ export const designSkills = [
 ];
 
 export const experiences = [
-  {
-    role: "Designer & Motion Designer",
-    place: "ETIC, ESI Student Club",
-    date: "Student Club Experience",
-    points: [
-      "Create visual identities, social media assets, motion graphics, and communication materials for student initiatives.",
-      "Combine design judgment with technical thinking across branding, UI/UX, and digital content production."
-    ]
-  },
+  
   {
     role: "Network & Security Engineering Intern",
     place: "Sonatrach, Drilling Division",
@@ -261,6 +253,15 @@ export const experiences = [
     points: [
       "Engineered an automated enterprise ticketing pipeline with multilingual support.",
       "Developed the React interface and integrated multi-agent OCR, FAISS RAG, and Mistral-LLM response logic."
+    ]
+  },
+  {
+    role: "Designer & Motion Designer",
+    place: "ETIC, ESI Student Club",
+    date: "Student Club Experience",
+    points: [
+      "Create visual identities, social media assets, motion graphics, and communication materials for student initiatives.",
+      "Combine design judgment with technical thinking across branding, UI/UX, and digital content production."
     ]
   }
 ];
