@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Ikram Badaoui | Portfolio",
   description:
     "Portfolio of Ikram Badaoui, an AI Engineering student interested in artificial intelligence, software engineering, networks, cybersecurity, research, and design.",
+    icons: {
+    icon: "/logo-modified.png",
+  },
   keywords: [
     "Ikram Badaoui",
     "AI",

@@ -18,7 +18,7 @@ export const profile = {
   title: "Computer Systems Engineering Student",
   email: "mi_badaoui@esi.dz",
   github: "https://github.com/b-ikram",
-  linkedin: "https://www.linkedin.com/in/ikram-badaoui",
+  linkedin: "https://www.linkedin.com/in/ikram-badaoui-9b89a3268/",
   cv: "/Ikram_Badaoui_CV.pdf",
   location: "Algiers, Algeria",
   intro:

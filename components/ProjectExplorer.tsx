@@ -8,10 +8,19 @@ import { cn } from "@/lib/utils";
 import { TechIcon } from "@/components/TechIcon";
 
 export function ProjectExplorer() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  // Filter out "All" from the list of category buttons
+  const categoriesWithoutAll = useMemo(
+    () => categoriesList.filter((cat) => cat !== "All"),
+    []
+  );
 
+  // Set default active tab to the first actual category
+  const [selectedCategory, setSelectedCategory] = useState(
+    categoriesWithoutAll[0] || ""
+  );
+
+  // Filter projects by selected category
   const filtered = useMemo(() => {
-    if (selectedCategory === "All") return projects;
     return projects.filter((project) =>
       project.categories.includes(selectedCategory as any)
     );
@@ -19,9 +28,9 @@ export function ProjectExplorer() {
 
   return (
     <div className="space-y-8">
-      {/* Category Filter Buttons */}
+      {/* Category Filter Buttons (No 'All' option) */}
       <div className="flex flex-wrap gap-2 border-b border-ruby/14 pb-5">
-        {categoriesList.map((category) => (
+        {categoriesWithoutAll.map((category) => (
           <button
             key={category}
             type="button"
