@@ -22,7 +22,7 @@ export const profile = {
   cv: "/Ikram_Badaoui_CV.pdf",
   location: "Algiers, Algeria",
   intro:
-    "Passionate about Artificial Intelligence, Machine Learning, and Software Engineering. Hands-on experience in research, robotics, and web development through academic and competitive projects. Motivated to contribute to innovative technologies while continuously expanding technical expertise."
+  "Passionate about Artificial Intelligence, Machine Learning, and Software Engineering. Hands-on experience in research, robotics, and web development through academic and competitive projects. Motivated to contribute to innovative technologies while continuously expanding technical expertise.\n\nAlongside my technical background, I bring an artistic side focused on visual design and motion graphics, bridging the gap between engineering and creative digital experiences.",
 };
 
 export const navItems = ["profile", "education", "projects", "technologies", "design", "experience", "Trainings", "contact"];
