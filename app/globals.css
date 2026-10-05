@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -74,4 +75,294 @@ body {
 
 .font-display {
   font-family: var(--font-cormorant, "Cormorant Garamond"), Georgia, Times New Roman, serif;
+}
+
+/* Hero handwritten annotations */
+
+.hero-note {
+  color: #67584f;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  letter-spacing: 0.055em;
+  font-weight: 500;
+}
+
+.hero-note-small {
+  color: #786960;
+  font-size: 0.68rem;
+  line-height: 1.55;
+  letter-spacing: 0.09em;
+  font-weight: 500;
+}
+
+.text-note {
+  color: #76675e;
+}
+
+.arrow {
+  width: 82px;
+  height: auto;
+  overflow: visible;
+}
+
+.arrow-draw {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: arrow-draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.arrow-head {
+  opacity: 0;
+  animation: arrow-head 0.35s ease-out 1.45s forwards;
+}
+
+.arrow-1 {
+  animation: arrow-float-1 5s ease-in-out 1.8s infinite;
+}
+
+.arrow-2 {
+  animation: arrow-float-2 5.5s ease-in-out 2s infinite;
+}
+
+.arrow-3 {
+  animation: arrow-float-3 5.2s ease-in-out 2.2s infinite;
+}
+
+@keyframes arrow-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes arrow-head {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes arrow-float-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(2px, -2px) rotate(1deg);
+  }
+}
+
+@keyframes arrow-float-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-2px, 2px) rotate(-1deg);
+  }
+}
+
+@keyframes arrow-float-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(3px, -1px) rotate(1deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-draw,
+  .arrow-head,
+  .arrow-1,
+  .arrow-2,
+  .arrow-3 {
+    animation: none;
+  }
+
+  .arrow-draw {
+    stroke-dashoffset: 0;
+  }
+
+  .arrow-head {
+    opacity: 1;
+  }
+}
+.slogan-meet {
+  display: inline-block;
+  transform: translateY(0.04em);
+}
+
+/* About Me animations */
+
+.about-greeting {
+  opacity: 0;
+  animation: about-fade-up 0.8s ease-out 0.15s forwards;
+}
+
+.about-title {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: about-fade-up 0.9s ease-out 0.3s forwards;
+}
+
+.about-image {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: about-fade-up 1s ease-out 0.5s forwards;
+}
+
+.heart {
+  display: inline-block;
+  margin-left: 4px;
+  transform-origin: center;
+  animation: about-heartbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes about-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes about-heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.08);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-greeting,
+  .about-title,
+  .about-image {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .heart {
+    animation: none;
+  }
+}
+.signature-heart {
+  display: inline-block;
+  margin-left: 0.12em;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.72em;
+  vertical-align: 0.05em;
+  animation: signature-heart 2.4s ease-in-out infinite;
+}
+
+@keyframes signature-heart {
+  0%,
+  100% {
+    transform: rotate(-8deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(4deg) scale(1.08);
+  }
+}
+@font-face {
+  font-family: "Brittany Signature";
+  src: url("/fonts/BrittanySignature.ttf") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.about-greeting {
+  font-family: "Brittany Signature", cursive;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.35;
+  padding: 0.15em 0.05em 0.25em;
+  letter-spacing: 0;
+
+  opacity: 0;
+  clip-path: inset(-20% 100% -20% 0);
+}
+
+.about-greeting-visible {
+  animation: handwriting-reveal 2.2s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    forwards;
+}
+
+@keyframes handwriting-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(-20% 100% -20% 0);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    clip-path: inset(-20% 0 -20% 0);
+  }
+}
+
+.signature-heart {
+  display: inline-block;
+  margin-left: 0.08em;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.65em;
+  vertical-align: 0.05em;
+  opacity: 0;
+}
+
+.about-greeting-visible .signature-heart {
+  animation:
+    heart-appear 0.4s ease-out 2.1s forwards,
+    signature-heart 2.4s ease-in-out 2.5s infinite;
+}
+
+@keyframes heart-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes signature-heart {
+  0%,
+  100% {
+    transform: scale(1) rotate(-5deg);
+  }
+
+  50% {
+    transform: scale(1.08) rotate(3deg);
+  }
 }

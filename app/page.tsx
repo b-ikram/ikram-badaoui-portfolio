@@ -1,10 +1,16 @@
 import Image from "next/image";
 import { ArrowRight, Download, Github, Linkedin, MapPin, Mail } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { IntroSection } from "@/components/IntroSection";
+import { ValuesMarquee } from "@/components/ValuesMarquee";
 import { ProjectExplorer } from "@/components/ProjectExplorer";
 import { ScrollControls } from "@/components/ScrollControls";
 import { Section } from "@/components/Section";
 import { TechIcon } from "@/components/TechIcon";
+import { AboutMe } from "@/components/AboutMe";
+import { Education } from "@/components/Education";
+import { WorkExperience } from "@/components/WorkExperience";
 import {
   achievements,
   contactLinks,
@@ -32,181 +38,16 @@ export default function Home() {
       <Navbar />
       <ScrollControls />
 
-      <section id="profile" className="relative mx-auto min-h-screen max-w-7xl px-5 pb-16 pt-24 sm:px-6 lg:px-8 flex flex-col justify-center">
+      <Hero />
 
-        {/* Main Layout Grid - increased gap-y for mobile/stacked view */}
-        <div className="relative z-10 grid items-center gap-y-12 gap-x-8 border-b border-ruby/15 pb-12 lg:grid-cols-12 mt-4">
-          
-          {/* LEFT COLUMN: Image Container */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative group w-full max-w-sm sm:max-w-md">
-              <div className="relative overflow-hidden rounded-xl border border-ruby/20 bg-blush p-2 shadow-xl">
-                <div className="relative aspect-[3/4] max-h-[72vh] w-full overflow-hidden rounded-lg">
-                  <Image
-                    src="/ikram-badaoui.jpg"
-                    alt="Ikram Badaoui"
-                    fill
-                    priority
-                    className="object-cover object-bottom transition duration-500 group-hover:scale-105"
-                    sizes="(max-width: 1024px) 100vw, 450px"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+      <IntroSection />
+      <AboutMe />
 
-          {/* RIGHT COLUMN: Greeting -> Spaced Subtitle -> Intro -> Buttons */}
-          <div className="lg:col-span-7 flex flex-col items-start justify-center lg:pl-4">
-            
-            {/* 1. "Hi, I'm Ikram" Greeting - Adjusted top margin */}
-            <span className="font-handwriting text-4xl sm:text-5xl lg:text-6xl text-ruby -rotate-3 inline-block font-normal tracking-wide mt-2 lg:-mt-4">
-              Hi, I'm Ikram
-            </span>
+      <Education />
 
-            {/* 2. Subtitle Title - Changed mt-20 to mt-4 sm:mt-6 for tight, natural flow */}
-            <h1 className="mt-10 sm:mt-16 lg:mt-20 mb-6 font-sans text-xs sm:text-sm font-semibold uppercase tracking-[0.22em] text-ruby/85">
-              Computer Systems Engineering Student
-            </h1>
 
-            {/* 3. Intro Paragraph */}
-            <p className="max-w-xl text-sm sm:text-base leading-relaxed text-zinc-800 whitespace-pre-line">
-            {profile.intro}
-            </p>
-
-            {/* 4. Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
-                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-ruby px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-cream shadow-md transition-all duration-300 hover:bg-oxblood hover:shadow-xl hover:-translate-y-0.5"
-              >
-                <Mail size={16} className="transition-transform group-hover:scale-110" />
-                <span>Contact Me</span>
-              </a>
-
-              <a
-                href={profile.cv}
-                download
-                className="inline-flex items-center gap-2 rounded-full border border-ruby/25 bg-paper/60 px-6 py-3.5 text-xs font-semibold uppercase tracking-widest text-ruby transition hover:border-ruby hover:bg-ruby hover:text-cream"
-              >
-                <Download size={15} />
-                CV
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </section>
-
-      <Section id="education" title="Education">
-        <div className="grid gap-4 md:grid-cols-2">
-          {education.map((item) => {
-            const Icon = item.icon;
-            return (
-              <article key={item.degree} className="portfolio-card border-t-4 border-t-amber-500/60 p-6">
-                <Icon className="text-ruby" size={28} />
-                <h3 className="mt-4 font-display text-3xl font-normal text-ruby">{item.degree}</h3>
-                
-                <p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-ruby">
-                  {item.institution}
-                </p>
-
-                <p className="mt-1 text-sm text-zinc-500">{item.date}</p>
-                <p className="mt-4 text-sm leading-7 text-zinc-800">{item.details}</p>
-              </article>
-            );
-          })}
-        </div>
-      </Section>
-
-      <Section id="projects" title="Projects">
-        <ProjectExplorer />
-      </Section>
-
-      <Section id="technologies" title="Technologies">
-        <div className="portfolio-card border-t-4 border-t-amber-500/70 p-7">
-          <div className="flex flex-wrap gap-3">
-            {technologies.map((tech) => (
-              <TechIcon key={tech} name={tech} />
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section id="design" title="Design & Creativity">
-        <div className="grid gap-5 xl:grid-cols-[0.84fr_1.16fr]">
-          <div className="burgundy-panel flex flex-col justify-between p-7">
-            <div>
-              <DesignIcon size={32} />
-              <h3 className="mt-6 font-display text-4xl font-normal text-cream">Creative Skills</h3>
-              <p className="mt-4 text-sm leading-7 text-cream/90">
-                I work at the intersection of motion, visuals, and interface thinking to create polished digital experiences with clarity and purpose.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-cream/80">
-                I developed these skills in our student club <strong className="font-bold text-cream">ETIC</strong>, where I served as a motion designer and graphic designer.
-              </p>
-            </div>
-          </div>
-
-          <div className="portfolio-card border-t-4 border-t-amber-500/70 p-7">
-            <div className="flex items-center justify-between border-b border-ruby/15 pb-4">
-              <p className="section-eyebrow text-ruby/60">Toolbox & Disciplines</p>
-              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-ruby/50">Design Stack</span>
-            </div>
-
-            <div className="mt-6 space-y-5">
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ruby/80">Motion Design</p>
-                <div className="flex flex-wrap gap-2">
-                  <TechIcon name="After Effects" />
-                  <TechIcon name="Premiere Pro" />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ruby/80">Graphic & Visual Design</p>
-                <div className="flex flex-wrap gap-2">
-                  <TechIcon name="Photoshop" />
-                  <TechIcon name="Illustrator" />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ruby/80">UI/UX & Product Design</p>
-                <div className="flex flex-wrap gap-2">
-                  <TechIcon name="Figma" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {motionVideos.map((video) => (
-            <div
-              key={video.title}
-              className="portfolio-card flex flex-col overflow-hidden border-t-4 border-t-ruby/70 p-4"
-            >
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ruby/65">
-                {video.title}
-              </p>
-
-              <div className={`relative aspect-[4/5] w-full overflow-hidden rounded flex items-center justify-center ${video.bg}`}>
-                <video
-                  className="h-full w-full object-contain overflow-hidden focus:outline-none border-none outline-none"
-                  src={video.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  disablePictureInPicture
-                  controlsList="nodownload noremoteplayback"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
+<ValuesMarquee />
+        <WorkExperience/>
 
       <Section id="experience" title="Experience">
         <div className="space-y-4">
