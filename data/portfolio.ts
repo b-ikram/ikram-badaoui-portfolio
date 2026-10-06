@@ -73,20 +73,21 @@ export const categoriesList = [
 
 export const projects = [
   {
-    title: "RL-HGGA Bin Packing Optimizer",
-    categories: ["AI", "Research", "Software"],
-    icon: BrainCircuit,
-    repo: "https://github.com/b-ikram/rl-hgga-bin-packing",
+    title: "Modern Data Center for ESI",
+    categories: ["Networks", "Cyber Security"],
+    icon: Network,
+    repo: "https://github.com/b-ikram/esi-containerlab-simulation",
     description:
-      "Research project on reinforcement learning-guided hybrid heuristics for the one-dimensional bin packing problem, comparing classical heuristics, genetic search, and adaptive optimization strategies.",
-    technologies: ["Python", "Jupyter", "Reinforcement Learning", "Genetic Algorithms", "BPPLIB"],
+      "Two-tier Clos spine-leaf data center fabric simulated in ContainerLab with EVPN/VXLAN, Arista EOS automation, VRF macro-segmentation, and layered security modeling.",
+    technologies: ["Docker", "Linux", "Ansible", "BGP EVPN", "VXLAN"],
     contributions: [
-      "Developed and evaluated an RL-guided HGGA approach for adaptive bin packing optimization.",
-      "Benchmarked solution quality, runtime, and gap metrics across standard problem instances.",
-      "Resulted in a research paper/article documenting the method, experiments, and findings."
+      "Designed a modern data center topology with redundancy, segmentation, and automated configuration.",
+      "Implemented AAA concepts with TACACS+, RADIUS, and OpenLDAP-backed access control.",
+      "Modeled secure network behavior across routing, segmentation, and traffic policy decisions."
     ],
-    featured: true
+    featured: false
   },
+  
   {
     title: "CUDA Neural Network Training Optimization",
     categories: ["HPC", "Research", "AI"],
@@ -102,44 +103,7 @@ export const projects = [
     ],
     featured: true
   },
-  {
-    title: "Semantic Log Search Engine",
-    categories: ["AI", "Big Data", "Software"],
-    icon: Database,
-    repo: "https://github.com/b-ikram/semantic-log-search",
-    description:
-      "A scalable Big Data pipeline for semantic similarity search and analytics over large-scale web server logs.",
-    technologies: [
-      "Apache Spark",
-      "PostgreSQL",
-      "pgvector",
-      "Python",
-      "Transformers",
-      "FastAPI"
-    ],
-    contributions: [
-      "Engineered a distributed log ingestion and preprocessing pipeline using Apache Spark, saving cleaned datasets in Parquet format.",
-      "Generated 384-dimensional vector embeddings with sentence-transformers (all-MiniLM-L6-v2) for semantic search over unstructured log messages.",
-      "Configured PostgreSQL with pgvector, constructing IVFFlat indexes for high-speed similarity search alongside analytical indexes on status and timestamps.",
-      "Built a Web UI and CLI tool to perform semantic vs. keyword search comparisons, temporal error analysis, and recurrent HTTP error detection."
-    ],
-    featured: true
-  },
-  {
-    title: "Modern Data Center for ESI",
-    categories: ["Networks", "Cyber Security"],
-    icon: Network,
-    repo: "https://github.com/b-ikram/esi-containerlab-simulation",
-    description:
-      "Two-tier Clos spine-leaf data center fabric simulated in ContainerLab with EVPN/VXLAN, Arista EOS automation, VRF macro-segmentation, and layered security modeling.",
-    technologies: ["Docker", "Linux", "Ansible", "BGP EVPN", "VXLAN"],
-    contributions: [
-      "Designed a modern data center topology with redundancy, segmentation, and automated configuration.",
-      "Implemented AAA concepts with TACACS+, RADIUS, and OpenLDAP-backed access control.",
-      "Modeled secure network behavior across routing, segmentation, and traffic policy decisions."
-    ],
-    featured: false
-  },
+  
   {
     title: "Agentic AI Ticketing Pipeline",
     categories: ["AI", "Software"],
@@ -154,6 +118,22 @@ export const projects = [
       "Placed 2nd in the Agentic AI category at Training Camp XII."
     ],
     featured: false
+  },
+  {
+    title: "RL-HGGA Bin Packing Optimizer",
+    categories: ["AI", "Research"],
+    icon: BrainCircuit,
+    article: "/hpc-project.pdf",
+    repo: "https://github.com/b-ikram/rl-hgga-bin-packing",
+    description:
+      "Research project on reinforcement learning-guided hybrid heuristics for the one-dimensional bin packing problem, comparing classical heuristics, genetic search, and adaptive optimization strategies.",
+    technologies: ["Python", "Jupyter", "Reinforcement Learning", "Genetic Algorithms", "BPPLIB"],
+    contributions: [
+      "Developed and evaluated an RL-guided HGGA approach for adaptive bin packing optimization.",
+      "Benchmarked solution quality, runtime, and gap metrics across standard problem instances.",
+      "Resulted in a research paper/article documenting the method, experiments, and findings."
+    ],
+    featured: true
   },
   {
     title: "Carbon Footprint Calculator",
@@ -175,6 +155,7 @@ export const projects = [
     title: "ESIBOT Autonomous Mobile Robot",
     categories: ["Robotics", "AI", "Software"],
     icon: Cpu,
+    article: "/hpc-project.pdf",
     repo: "https://github.com/b-ikram/ESIBOT",
     image: "/projects/esibot.jpg",
     description:
@@ -187,29 +168,7 @@ export const projects = [
     ],
     featured: false
   },
-  {
-    title: "Sonatrach Data Center Network & Security Simulation",
-    categories: ["Networks", "Cyber Security"],
-    icon: ShieldCheck, // Make sure ShieldCheck (or Network/Lock) is imported from 'lucide-react'
-    article: "/RSPE_BADAOUI_SIQ1.pdf",
-    description:
-      "End-to-end design, virtualized simulation, and security analysis of a redundant Data Center network architecture for Sonatrach (Division Forage).",
-    technologies: [
-      "GNS3",
-      "VMware",
-      "Cisco IOS",
-      "VPN",
-      "DHCP/FTP/HTTP",
-      "Kali Linux",
-      "Network Security"
-    ],
-    contributions: [
-      "Designed and simulated a high-availability Data Center architecture featuring core switch redundancy, service provisioning (HTTP, FTP, DHCP), and network supervision.",
-      "Configured edge router security controls, traffic filtering policies, VPN tunnels, and proxy gateways for secure inter-divisional communication and internet access.",
-      "Conducted security vulnerability assessments and simulated attack scenarios using Kali Linux tools to identify network flaws and implement hardening measures."
-    ],
-    featured: false
-  }
+  
 ];
 
 export const designAreas = [
@@ -255,15 +214,7 @@ export const experiences = [
       "Developed the React interface and integrated multi-agent OCR, FAISS RAG, and Mistral-LLM response logic."
     ]
   },
-  {
-    role: "Designer & Motion Designer",
-    place: "ETIC, ESI Student Club",
-    date: "Student Club Experience",
-    points: [
-      "Create visual identities, social media assets, motion graphics, and communication materials for student initiatives.",
-      "Combine design judgment with technical thinking across branding, UI/UX, and digital content production."
-    ]
-  }
+  
 ];
 
 export const education = [

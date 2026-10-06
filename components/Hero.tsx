@@ -7,7 +7,7 @@ const serif = {
 /* Small hand-drawn arrows inspired by the reference */
 const Arrow1 = () => (
   <svg
-    viewBox="0 0 90 55"
+    viewBox="0 0 85 55"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.7"
@@ -15,20 +15,30 @@ const Arrow1 = () => (
     strokeLinejoin="round"
     className="arrow arrow-1"
   >
+    {/* loose loop + arrow */}
     <path
       className="arrow-draw"
-      d="M8 43 C17 31, 17 17, 30 15 C43 13, 46 28, 35 31 C26 34, 24 23, 32 20 C42 16, 57 22, 70 29"
+      pathLength="1"
+      d="M8 12
+         C4 22, 7 35, 20 39
+         C32 43, 43 35, 39 25
+         C35 16, 22 17, 19 27
+         C16 37, 29 43, 43 42
+         C56 41, 66 35, 77 30"
     />
-    <path
-      className="arrow-head"
-      d="M64 23 L71 29 L62 32"
-    />
+
+    {/* Arrow 1 */}
+<path
+  className="arrow-head"
+  pathLength="1"
+  d="M71 25 L78 30 L70 33"
+/>
   </svg>
 );
 
-const Arrow2 = () => (
+const Arrow3 = () => (
   <svg
-    viewBox="0 0 90 65"
+    viewBox="0 0 80 55"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.7"
@@ -36,20 +46,27 @@ const Arrow2 = () => (
     strokeLinejoin="round"
     className="arrow arrow-2"
   >
+    {/* simple playful upward curve */}
     <path
       className="arrow-draw"
-      d="M78 8 C67 8, 58 15, 62 25 C66 35, 78 31, 77 41 C76 51, 61 53, 47 48 C35 44, 25 45, 16 53"
+      pathLength="1"
+      d="M6 39
+         C18 48, 31 45, 38 36
+         C45 27, 48 17, 61 12
+         C67 10, 71 11, 75 13"
     />
+
     <path
       className="arrow-head"
-      d="M22 45 L15 53 L25 54"
+      pathLength="1"
+      d="M67 7 L76 13 L66 17"
     />
   </svg>
 );
 
-const Arrow3 = () => (
+const Arrow2 = () => (
   <svg
-    viewBox="0 0 95 55"
+    viewBox="0 0 85 60"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.7"
@@ -57,13 +74,21 @@ const Arrow3 = () => (
     strokeLinejoin="round"
     className="arrow arrow-3"
   >
+    {/* loose S-shaped arrow */}
     <path
       className="arrow-draw"
-      d="M7 15 C19 27, 36 35, 53 31 C67 28, 72 19, 82 22"
+      pathLength="1"
+      d="M77 8
+         C62 6, 51 11, 50 21
+         C49 31, 61 32, 61 39
+         C61 48, 45 52, 31 49
+         C21 47, 13 48, 7 53"
     />
+
     <path
       className="arrow-head"
-      d="M74 16 L83 22 L75 28"
+      pathLength="1"
+      d="M17 45 L7 53 L19 54"
     />
   </svg>
 );

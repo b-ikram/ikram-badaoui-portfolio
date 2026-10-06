@@ -11,6 +11,8 @@ import { TechIcon } from "@/components/TechIcon";
 import { AboutMe } from "@/components/AboutMe";
 import { Education } from "@/components/Education";
 import { WorkExperience } from "@/components/WorkExperience";
+import { Projects } from "@/components/Projects";
+import { Experience } from "@/components/Experience";
 import {
   achievements,
   contactLinks,
@@ -41,37 +43,14 @@ export default function Home() {
       <Hero />
 
       <IntroSection />
+
       <AboutMe />
 
       <Education />
 
+        <Projects/>
+      <Experience/>
 
-<ValuesMarquee />
-        <WorkExperience/>
-
-      <Section id="experience" title="Experience">
-        <div className="space-y-4">
-          {experiences.map((item) => (
-            <article key={item.role} className="portfolio-card border-l-4 border-l-amber-500/60 p-6">
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <h3 className="font-display text-3xl font-normal text-ruby">{item.role}</h3>
-                  <p className="mt-1 font-medium text-zinc-700">{item.place}</p>
-                </div>
-                <p className="text-sm text-zinc-500">{item.date}</p>
-              </div>
-              <ul className="mt-5 space-y-2">
-                {item.points.map((point) => (
-                  <li key={point} className="flex gap-3 text-sm leading-6 text-zinc-800">
-                    <span className="mt-2 size-1.5 shrink-0 bg-ruby" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </Section>
 
       {/* FIXED: Changed id="Qualifications" to lowercase id="qualifications" */}
       <Section id="trainings" title="Trainings">
