@@ -1088,3 +1088,51 @@ body {
   .cm-char { opacity: 1; animation: none !important; }
   .cm-start::after, .cm-end::after, .cm-char::after { display: none; }
 }
+
+
+/* floatinggg*/
+
+@keyframes float-pc {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-2deg);
+  }
+
+  50% {
+    transform: translate(-50%, calc(-50% - 10px)) rotate(-1deg);
+  }
+}
+
+@keyframes float-glasses {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translate(5px, -8px) rotate(-3deg);
+  }
+}
+
+@keyframes float-coffee {
+  0%,
+  100% {
+    transform: rotate(6deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(8deg) translateY(-9px);
+  }
+}
+
+.animate-float-pc {
+  animation: float-pc 5s ease-in-out infinite;
+}
+
+.animate-float-glasses {
+  animation: float-glasses 4s ease-in-out infinite;
+}
+
+.animate-float-coffee {
+  animation: float-coffee 4.5s ease-in-out infinite;
+}

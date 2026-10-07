@@ -8,8 +8,8 @@ const serif = {
 
 const values = [
   {
-    title: "GROWTH MINDSET",
-    text: "I believe progress comes from staying curious, learning from mistakes, and constantly pushing beyond what I already know.",
+    title: "PROBLEM SOLVER",
+    text: "Complex problems become clearer when broken down, explored, and turned into practical solutions. Turning complex problems into practical solutions through curiosity, experimentation, and persistence.",
   },
   {
     title: "RESEARCH MINDSET",
@@ -17,7 +17,7 @@ const values = [
   },
   {
     title: "CURIOSITY",
-    text: "I'm naturally drawn to unfamiliar problems, new ideas, and challenges that make me ask what could be possible.",
+    text: "Unfamiliar problems, new ideas, and challenging questions are what spark deeper exploration.",
   },
   {
     title: "BUILD TO LEARN",
