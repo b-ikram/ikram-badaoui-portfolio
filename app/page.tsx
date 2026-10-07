@@ -12,6 +12,7 @@ import { Education } from "@/components/Education";
 import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
 import { MyValues } from "@/components/MyValues";
+import ContactMe from "@/components/contactme";
 import {
   achievements,
   contactLinks,
@@ -52,35 +53,7 @@ export default function Home() {
       <ValuesMarquee/>
       <MyValues/>
 
-      <Section id="contact" title="Contact">
-        <div className="portfolio-card border-t-4 border-t-ruby p-7">
-          <p className="max-w-3xl text-base leading-8 text-zinc-800">
-            Open to AI research, software engineering, graduate opportunities, and collaborations across intelligent systems,
-            networks, cybersecurity, and design.
-          </p>
-          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {contactLinks.map((item) => {
-              const Icon = item.icon;
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noreferrer" : undefined}
-                  download={item.download}
-                  className="group flex items-center justify-between border border-ruby/16 bg-white p-4 text-ruby transition hover:border-ruby hover:bg-ruby hover:text-cream"
-                >
-                  <span className="flex items-center gap-3 text-sm font-semibold">
-                    <Icon size={18} />
-                    {item.label}
-                  </span>
-                  <ArrowRight className="transition group-hover:translate-x-1" size={16} />
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </Section>
+      <ContactMe/>
 
       <footer className="border-t border-ruby/18 bg-white px-5 py-8 text-center text-xs text-zinc-600 sm:text-sm">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">

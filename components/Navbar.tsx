@@ -55,10 +55,10 @@ export function Navbar() {
         
         {/* Brand Name */}
         <a
-          href="#profile"
-          className="shrink-0 font-display text-xl sm:text-2xl font-medium uppercase tracking-widest text-ruby transition hover:opacity-80"
+        href="#profile"
+        className="shrink-0 font-display text-xl sm:text-2xl font-bold uppercase tracking-widest text-ruby transition hover:opacity-80"
         >
-          IKRAM BADAOUI
+         IKRAM BADAOUI
         </a>
 
         {/* Right Section: Desktop Links */}
