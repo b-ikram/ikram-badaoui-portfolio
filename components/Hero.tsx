@@ -103,7 +103,7 @@ export function Hero() {
     >
       {/* Main title */}
       {/* Curved main title */}
-<div className="relative z-0 mx-auto mt-12 h-[190px] w-full max-w-[1400px] sm:mt-24 sm:h-[210px]">    <svg
+<div className="relative z-0 mx-auto mt-20 h-[190px] w-full max-w-[1400px] sm:mt-24 sm:h-[210px]">    <svg
     viewBox="0 0 1000 210"
     className="absolute inset-0 h-full w-full overflow-visible"
     preserveAspectRatio="xMidYMid meet"
