@@ -111,12 +111,12 @@ export function ContactMe() {
         >
           <span
             className={`
-              absolute -left-4 -top-6 select-none
+              absolute -left-4 -top-[88px] select-none
               text-[170px] leading-none tracking-[-0.08em]
               text-[#9b1c0e]/[0.055]
               transition-all duration-[1200ms] ease-out
-              sm:-left-6 sm:-top-8 sm:text-[240px]
-              md:-left-8 md:-top-10 md:text-[320px]
+              sm:-left-6 sm:-top-[108px] sm:text-[240px]
+              md:-left-8 md:-top-[126px] md:text-[320px]
               ${
                 inView
                   ? "translate-x-0 opacity-100"
