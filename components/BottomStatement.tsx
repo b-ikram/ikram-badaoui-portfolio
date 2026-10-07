@@ -64,7 +64,7 @@ export function BottomStatement() {
           font-bold
           uppercase
           tracking-[0.2em]
-          text-[#7b0d1b]
+          text-[#9b1c0e]
           transition-all
           duration-700
           delay-200

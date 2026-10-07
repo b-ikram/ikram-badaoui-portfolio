@@ -25,7 +25,16 @@ export const profile = {
   "Passionate about Artificial Intelligence, Machine Learning, and Software Engineering. Hands-on experience in research, robotics, and web development through academic and competitive projects. Motivated to contribute to innovative technologies while continuously expanding technical expertise.\n\nAlongside my technical background, I bring an artistic side focused on visual design and motion graphics, bridging the gap between engineering and creative digital experiences.",
 };
 
-export const navItems = ["profile", "education", "projects", "technologies", "design", "experience", "Trainings", "contact"];
+export const navItems = [
+  { label: "home", targetId: "profile" },
+  { label: "about me", targetId: "about-me" },
+  { label: "education", targetId: "education" },
+  { label: "projects", targetId: "projects" },
+  { label: "experience", targetId: "experience" },
+  { label: "values", targetId: "my-values" },
+  { label: "design", targetId: "about" },
+  { label: "contact", targetId: "contact" },
+];
 export const focusAreas = [
   "Artificial Intelligence",
   "Software Engineering",
@@ -200,20 +209,21 @@ export const experiences = [
     role: "Network & Security Engineering Intern",
     place: "Sonatrach, Drilling Division",
     date: "Aug 2025 - Sept 2025",
+    article: "/RSPE_BADAOUI_SIQ1.pdf",
     points: [
       "Designed and simulated a data center architecture in GNS3 with VLAN/DMZ segmentation and secure VPN tunnels.",
       "Validated redundancy and security controls through attack simulations, DHCP scenarios, and HSRP/GLBP testing."
     ]
   },
   {
-    role: "Agentic AI Hackathon Project",
-    place: "Training Camp XII",
-    date: "2026",
-    points: [
-      "Engineered an automated enterprise ticketing pipeline with multilingual support.",
-      "Developed the React interface and integrated multi-agent OCR, FAISS RAG, and Mistral-LLM response logic."
-    ]
-  },
+  role: "Samsung Innovation Campus",
+  place: "Samsung x ESI",
+  date: "2026",
+  points: [
+    "Selected for the 2026 Samsung Innovation Campus program at ESI, focusing on artificial intelligence and emerging technologies.",
+    "Currently developing practical skills through hands-on courses, with a final project aimed at solving a real-world problem using AI."
+  ]
+},
   
 ];
 

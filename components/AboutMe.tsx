@@ -52,7 +52,7 @@ export function AboutMe() {
             className={`
               pointer-events-none absolute -left-6 -top-28 select-none
               text-[170px] leading-none tracking-[-0.08em]
-              text-[#7b0d1b]/[0.055]
+              text-[#9b1c0e]/[0.055]
               transition-all duration-[1200ms] ease-out
               sm:-left-8 sm:-top-36 sm:text-[240px]
               md:-left-10 md:-top-44 md:text-[320px]
@@ -208,7 +208,7 @@ export function AboutMe() {
           >
 
             <p
-              className="text-xs uppercase tracking-[0.18em] text-[#7b0d1b]"
+              className="text-xs uppercase tracking-[0.18em] text-[#9b1c0e]"
               style={serif}
             >
               Curious by nature.
@@ -233,7 +233,7 @@ export function AboutMe() {
               href="#projects"
               className="
                 group mt-8 inline-flex items-center rounded-full
-                bg-[#7b0d1b] px-7 py-3.5
+                bg-[#9b1c0e] px-7 py-3.5
                 text-[10px] font-bold uppercase
                 tracking-[0.2em] text-white
                 transition-all duration-300
@@ -261,7 +261,7 @@ export function AboutMe() {
         {/* =====================================================
             BOTTOM STATEMENT
         ===================================================== */}
-        <div className="mt-16 border-t border-[#7b0d1b]/15 pt-7 md:mt-20">
+        <div className="mt-16 border-t border-[#9b1c0e]/15 pt-7 md:mt-20">
         <BottomStatement />
         </div>
           

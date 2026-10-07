@@ -1,12 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Herr_Von_Muellerhoff } from "next/font/google";
 
-const script = Herr_Von_Muellerhoff({ weight: "400", subsets: ["latin"] });
-
-export function AnimatedMy() {
-  const ref = useRef<HTMLSpanElement>(null);
+export function AnimatedPhoto({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -28,13 +25,11 @@ export function AnimatedMy() {
   }, []);
 
   return (
-    <span
+    <div
       ref={ref}
-      className={`my-animation ${script.className} ${
-        visible ? "my-animation-visible" : ""
-      }`}
+      className={`esi-photo ${visible ? "esi-photo-visible" : ""}`}
     >
-      My
-    </span>
+      {children}
+    </div>
   );
 }

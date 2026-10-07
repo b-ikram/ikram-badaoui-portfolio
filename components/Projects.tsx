@@ -62,7 +62,7 @@ function ProjectImage({
         focus-visible:outline
         focus-visible:outline-2
         focus-visible:outline-offset-4
-        focus-visible:outline-[#7b0d1b]
+        focus-visible:outline-[#9b1c0e]
       "
     >
       <div
@@ -91,7 +91,7 @@ function ProjectImage({
 "
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-[#7b0d1b]">
+          <div className="flex h-full items-center justify-center bg-[#9b1c0e]">
             <span
               className="text-8xl text-[#f4e8dc]/20"
               style={serif}
@@ -105,9 +105,9 @@ function ProjectImage({
         <div
           className="
             absolute inset-0
-            bg-[#7b0d1b]/0
+            bg-[#9b1c0e]/0
             transition-colors duration-500
-            group-hover:bg-[#7b0d1b]/10
+            group-hover:bg-[#9b1c0e]/10
           "
         />
 
@@ -118,7 +118,7 @@ function ProjectImage({
             text-[10px]
             font-bold
             tracking-[0.2em]
-            text-[#7b0d1b]
+            text-[#9b1c0e]
             opacity-0
             transition-all duration-500
             group-hover:opacity-100
@@ -136,7 +136,7 @@ function ProjectImage({
             items-center justify-center
             rounded-full
             bg-white
-            text-[#7b0d1b]
+            text-[#9b1c0e]
             shadow-sm
             opacity-0
             transition-all duration-500
@@ -151,7 +151,7 @@ function ProjectImage({
       {/* TITLE */}
       <div className="mt-4 flex items-start justify-between gap-5">
         <div>
-          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.22em] text-[#7b0d1b]">
+          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.22em] text-[#9b1c0e]">
             {project.categories.join(" · ")}
           </p>
 
@@ -163,7 +163,7 @@ function ProjectImage({
     text-[#171717]
     transition-colors
     duration-300
-    group-hover:text-[#7b0d1b]
+    group-hover:text-[#9b1c0e]
     sm:text-xl
   "
   style={serif}
@@ -272,7 +272,7 @@ const filteredProjects = useMemo(() => {
     text-[170px]
     leading-none
     tracking-[-0.08em]
-    text-[#7b0d1b]/[0.055]
+    text-[#9b1c0e]/[0.055]
     transition-all
     duration-[1200ms]
     ease-out
@@ -303,40 +303,28 @@ const filteredProjects = useMemo(() => {
     }
   `}
 >    
-    {/* LEFT INTRO */}
-    <div className="max-w-sm">
-      <div className="mb-6 flex items-center gap-4">
-        <span className="h-px w-10 bg-[#7b0d1b]" />
-
-        <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7b0d1b]">
-          A collection of work
-        </span>
-      </div>
-
-      <p className="text-[14px] leading-7 text-zinc-600">
-        I have worked on a wide range of projects, both academically
-        and independently, exploring different sides of computer
-        systems — from artificial intelligence and research to
-        networks, software, and applied engineering.
-      </p>
-    </div>
+    
 
     {/* RIGHT TITLE */}
     <div className="relative pt-10 md:pt-13">
-      <h2
-        className="relative z-10 whitespace-nowrap text-[#171717]"
-        style={{
-          ...serif,
-          fontSize: "clamp(2.2rem, 5vw, 5rem)",
-          lineHeight: "0.9",
-          letterSpacing: "-0.04em",
-        }}
-      >
-        Projects
-      </h2>
+      <div>
+           
+
+            <h2
+              className="relative z-10 whitespace-nowrap text-[#171717]"
+              style={{
+                ...serif,
+                fontSize: "clamp(2.2rem, 5vw, 5rem)",
+                lineHeight: "0.9",
+                letterSpacing: "-0.04em",
+              }}
+            >
+              Selected Works
+            </h2>
+          </div>
 
       <div className="mt-7 flex items-center gap-5">
-        <span className="h-px flex-1 bg-[#7b0d1b]/25" />
+        <span className="h-px flex-1 bg-[#9b1c0e]/25" />
 
         <span
           className="
@@ -385,7 +373,7 @@ const filteredProjects = useMemo(() => {
           duration-300
           ${
             active
-              ? "text-[#7b0d1b]"
+              ? "text-[#9b1c0e]"
               : "text-[#171717]/45 hover:text-[#171717]"
           }
         `}
@@ -398,7 +386,7 @@ const filteredProjects = useMemo(() => {
             bottom-0
             left-0
             h-px
-            bg-[#7b0d1b]
+            bg-[#9b1c0e]
             transition-all
             duration-300
             ${active ? "w-full" : "w-0"}
@@ -485,7 +473,7 @@ const filteredProjects = useMemo(() => {
                 shadow-md
                 transition-all
                 duration-300
-                hover:bg-[#7b0d1b]
+                hover:bg-[#9b1c0e]
                 hover:text-white
               "
             >
@@ -503,7 +491,7 @@ const filteredProjects = useMemo(() => {
                   className="object-contain p-6 sm:p-10"
                 />
               ) : (
-                <div className="flex h-full items-center justify-center bg-[#7b0d1b]">
+                <div className="flex h-full items-center justify-center bg-[#9b1c0e]">
                   <span
                     className="text-8xl text-[#f4e8dc]/30"
                     style={serif}
@@ -523,7 +511,7 @@ const filteredProjects = useMemo(() => {
               
               {/* LEFT */}
               <div>
-                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#7b0d1b]">
+                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#9b1c0e]">
                   {selectedProject.categories.join(" · ")}
                 </p>
 
@@ -541,7 +529,7 @@ const filteredProjects = useMemo(() => {
                 </h2>
 
                 <div className="mt-8">
-                  <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7b0d1b]">
+                  <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9b1c0e]">
                     About the project
                   </p>
 
@@ -553,7 +541,7 @@ const filteredProjects = useMemo(() => {
                 {/* CONTRIBUTIONS */}
                 {selectedProject.contributions?.length > 0 && (
                   <div className="mt-8">
-                    <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7b0d1b]">
+                    <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9b1c0e]">
                       Contributions
                     </p>
 
@@ -564,7 +552,7 @@ const filteredProjects = useMemo(() => {
                             key={index}
                             className="flex gap-3 text-sm leading-6 text-zinc-600"
                           >
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#7b0d1b]" />
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#9b1c0e]" />
                             <span>{contribution}</span>
                           </li>
                         )
@@ -578,7 +566,7 @@ const filteredProjects = useMemo(() => {
               <div>
                 {/* TECHNOLOGIES */}
                 <div>
-                  <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7b0d1b]">
+                  <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9b1c0e]">
                     Technologies
                   </p>
 
@@ -607,7 +595,7 @@ const filteredProjects = useMemo(() => {
                 {/* LINKS */}
                 {(selectedProject.repo || selectedProject.article) && (
                   <div className="mt-10">
-                    <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7b0d1b]">
+                    <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9b1c0e]">
                       Links
                     </p>
 
@@ -631,8 +619,8 @@ const filteredProjects = useMemo(() => {
                             tracking-[0.12em]
                             text-[#171717]
                             transition-colors
-                            hover:border-[#7b0d1b]
-                            hover:bg-[#7b0d1b]
+                            hover:border-[#9b1c0e]
+                            hover:bg-[#9b1c0e]
                             hover:text-white
                           "
                         >
@@ -660,8 +648,8 @@ const filteredProjects = useMemo(() => {
                             tracking-[0.12em]
                             text-[#171717]
                             transition-colors
-                            hover:border-[#7b0d1b]
-                            hover:bg-[#7b0d1b]
+                            hover:border-[#9b1c0e]
+                            hover:bg-[#9b1c0e]
                             hover:text-white
                           "
                         >
@@ -676,7 +664,7 @@ const filteredProjects = useMemo(() => {
                 {/* PROJECT NUMBER */}
                 <div className="mt-10 border-t border-[#171717]/10 pt-5">
                   <span
-                    className="text-7xl leading-none text-[#7b0d1b]/10"
+                    className="text-7xl leading-none text-[#9b1c0e]/10"
                     style={serif}
                   >
                     {String(

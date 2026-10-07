@@ -26,13 +26,12 @@ const Arrow1 = () => (
          C16 37, 29 43, 43 42
          C56 41, 66 35, 77 30"
     />
-
-    {/* Arrow 1 */}
-<path
-  className="arrow-head"
-  pathLength="1"
-  d="M71 25 L78 30 L70 33"
-/>
+    {/* head: tip at (77,30), aligned with the end tangent */}
+    <path
+      className="arrow-head"
+      pathLength="1"
+      d="M67.9 29.2 L77 30 L71.5 37.4"
+    />
   </svg>
 );
 
@@ -46,20 +45,20 @@ const Arrow3 = () => (
     strokeLinejoin="round"
     className="arrow arrow-2"
   >
-    {/* simple playful upward curve */}
+    {/* playful upward curve, now ending pointing right */}
     <path
       className="arrow-draw"
       pathLength="1"
       d="M6 39
          C18 48, 31 45, 38 36
-         C45 27, 48 17, 61 12
-         C67 10, 71 11, 75 13"
+         C45 27, 49 16, 62 12
+         C67 10.5, 71 10, 75 10"
     />
-
+    {/* head: tip at (75,10) */}
     <path
       className="arrow-head"
       pathLength="1"
-      d="M67 7 L76 13 L66 17"
+      d="M68 5.5 L75 10 L68 14.5"
     />
   </svg>
 );
@@ -84,20 +83,19 @@ const Arrow2 = () => (
          C61 48, 45 52, 31 49
          C21 47, 13 48, 7 53"
     />
-
+    {/* head: tip at (7,53), pointing down-left */}
     <path
       className="arrow-head"
       pathLength="1"
-      d="M17 45 L7 53 L19 54"
+      d="M10.3 44.4 L7 53 L16.1 51.4"
     />
   </svg>
 );
-
 export function Hero() {
   return (
     <section
       id="profile"
-      className="relative flex min-h-[100svh] flex-col overflow-hidden text-ruby"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden text-[#9b1c0e]"
       style={{
         background:
           "linear-gradient(180deg, #e5d9ce 0%, #eee8e1 42%, #faf9f6 100%)",
@@ -121,7 +119,7 @@ export function Hero() {
     <text
       fill="currentColor"
       textAnchor="middle"
-      className="text-ruby"
+      className="text-[#9b1c0e]"
       style={{
         ...serif,
         fontSize: "130px",
@@ -141,7 +139,7 @@ export function Hero() {
           alt="Ikram Badaoui"
           fill
           priority
-          className="object-contain object-bottom drop-shadow-[0_20px_40px_rgba(93,10,20,0.20)]"
+          className="object-contain object-bottom drop-shadow-[0_20px_40px_rgba(155,28,14,0.20)]"
           sizes="(max-width: 768px) 92vw, 640px"
         />
       </div>
@@ -221,7 +219,7 @@ export function Hero() {
       {/* CTA */}
       <a
         href="#projects"
-        className="absolute bottom-8 right-5 z-30 rounded-full bg-ruby px-7 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-cream shadow-lg transition hover:-translate-y-0.5 hover:bg-oxblood sm:right-10 md:bottom-12"
+        className="absolute bottom-8 right-5 z-30 rounded-full bg-[#9b1c0e] px-7 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-cream shadow-lg transition hover:-translate-y-0.5 hover:bg-oxblood sm:right-10 md:bottom-12"
       >
         Explore my work
       </a>

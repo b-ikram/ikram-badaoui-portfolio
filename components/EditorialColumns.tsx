@@ -35,7 +35,7 @@ export function EditorialColumns() {
     <div
       ref={ref}
       className={`
-        mt-24 grid border-t border-[#7b0d1b]/15
+        mt-24 grid border-t border-[#9b1c0e]/15
         transition-all duration-1000 ease-out
         md:grid-cols-3
         ${
@@ -48,7 +48,7 @@ export function EditorialColumns() {
       {/* 01 */}
       <a
         href="#about-me"
-        className="group border-b border-[#7b0d1b]/15 py-8 md:border-b-0 md:border-r md:pr-10"
+        className="group border-b border-[#9b1c0e]/15 py-8 md:border-b-0 md:border-r md:pr-10"
       >
         <div className="flex gap-6">
           <span className="shrink-0 text-5xl text-ruby" style={serif}>
@@ -77,7 +77,7 @@ export function EditorialColumns() {
       {/* 02 */}
       <a
         href="#projects"
-        className="group border-b border-ruby/20 py-8 md:border-b-0 md:border-r md:px-10"
+        className="group border-b border-[#9b1c0e]/20 py-8 md:border-b-0 md:border-r md:px-10"
       >
         <div className="flex gap-6">
           <span className="shrink-0 text-5xl text-ruby" style={serif}>
@@ -114,7 +114,7 @@ export function EditorialColumns() {
           </span>
 
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-ruby">
+            <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-#9b1c0e">
               Let&apos;s
               <br />
               connect

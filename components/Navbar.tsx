@@ -8,27 +8,45 @@ const cx = (...classes: (string | boolean | undefined)[]) =>
   classes.filter(Boolean).join(" ");
 
 export function Navbar() {
-  const [active, setActive] = useState("profile");
+  const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id.toLowerCase());
-          }
-        });
-      },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0.1 }
-    );
+    const updateActiveSection = () => {
+      const activationPoint = window.innerHeight * 0.3;
+      const sections = navItems
+        .map((item) => ({
+          item,
+          element: document.getElementById(item.targetId),
+        }))
+        .filter(
+          (section): section is {
+            item: (typeof navItems)[number];
+            element: HTMLElement;
+          } => section.element !== null
+        )
+        .map((section) => ({
+          ...section,
+          top: section.element.getBoundingClientRect().top,
+        }));
 
-    navItems.forEach((item) => {
-      const element = document.getElementById(item.toLowerCase());
-      if (element) observer.observe(element);
-    });
+      const currentSection =
+        sections
+          .filter((section) => section.top <= activationPoint)
+          .sort((a, b) => b.top - a.top)[0] ??
+        sections.sort((a, b) => a.top - b.top)[0];
 
-    return () => observer.disconnect();
+      if (currentSection) setActive(currentSection.item.label);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
 
   return (
@@ -48,13 +66,12 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             {navItems.map((item) => {
               // Convert both to lowercase to guarantee a match
-              const itemKey = item.toLowerCase();
-              const isActive = active === itemKey;
+              const isActive = active === item.label;
 
               return (
                 <a
-                  key={item}
-                  href={`#${itemKey}`}
+                  key={item.label}
+                  href={`#${item.targetId}`}
                   className={cx(
                     "text-[0.68rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-200",
                     isActive
@@ -62,7 +79,7 @@ export function Navbar() {
                       : "text-ruby/60 hover:text-ruby"
                   )}
                 >
-                  {item}
+                  {item.label}
                 </a>
               );
             })}
@@ -96,12 +113,17 @@ export function Navbar() {
           <div className="flex flex-col gap-3">
             {navItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.label}
+                href={`#${item.targetId}`}
                 onClick={() => setOpen(false)}
-                className="text-xs font-semibold uppercase tracking-widest text-ruby/80 hover:text-ruby"
+                className={cx(
+                  "text-xs font-semibold uppercase tracking-widest transition-colors",
+                  active === item.label
+                    ? "text-ruby underline underline-offset-4 decoration-ruby/40"
+                    : "text-ruby/80 hover:text-ruby"
+                )}
               >
-                {item}
+                {item.label}
               </a>
             ))}
             <a

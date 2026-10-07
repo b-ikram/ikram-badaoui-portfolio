@@ -14,7 +14,7 @@ const config: Config = {
         moss: "#a8c7a1",
         copper: "#d89b6d",
         marine: "#78a6b8",
-        ruby: "#5d0a14",
+        ruby: "#9b1c0e",
         oxblood: "#250509",
         cream: "#f4e1c7",
         paper: "#fbf3e8",

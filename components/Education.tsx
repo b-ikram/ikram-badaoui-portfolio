@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatedTimeline } from "./AnimatedTimeline";
-
+import { AnimatedPhoto } from "./AnimatedPhoto";
 const serif = {
   fontFamily: '"Playfair Display", "Cormorant Garamond", Georgia, serif',
 };
@@ -39,16 +39,8 @@ export function Education() {
       id="education"
       className="relative overflow-hidden px-6 py-20 sm:px-10 md:px-16 md:py-28"
       style={{
-        background: `
-          radial-gradient(
-            circle at center,
-            #ffffff 0%,
-            #ffffff 30%,
-            #faf7f2 55%,
-            #f1e8dd 100%
-          )
-        `,
-      }}
+  background: "#faf7ee",
+}}
     >
       <div className="mx-auto max-w-6xl">
 
@@ -65,9 +57,7 @@ export function Education() {
           `}
         >
           <div>
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#7b0d1b]">
-              Academic journey
-            </p>
+           
 
             <h2
               className="relative z-10 whitespace-nowrap text-[#171717]"
@@ -82,9 +72,6 @@ export function Education() {
             </h2>
           </div>
 
-          <span className="hidden text-[10px] uppercase tracking-[0.2em] text-zinc-400 sm:block">
-            2022 — 2027
-          </span>
         </div>
 
         {/* HORIZONTAL TIMELINE */}
@@ -102,7 +89,7 @@ export function Education() {
             <div className="relative">
 
               {/* TIMELINE LINE */}
-              <div className="education-timeline-line absolute left-0 right-0 top-[10px] hidden h-px bg-[#7b0d1b]/20 md:block" />
+              <div className="education-timeline-line absolute left-0 right-0 top-[10px] hidden h-px bg-[#9b1c0e]/20 md:block" />
 
               {/* MOVING RED MARKER */}
               <div className="education-timeline-marker hidden md:block" />
@@ -122,9 +109,7 @@ export function Education() {
                       2022
                     </p>
 
-                    <p className="mt-4 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-400">
-                      July · Foundation
-                    </p>
+                    
 
                     <h3
                       className="mt-5 text-3xl leading-tight text-[#171717]"
@@ -135,7 +120,7 @@ export function Education() {
                       <em>Baccalaureate</em>
                     </h3>
 
-                    <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.16em] text-[#7b0d1b]">
+                    <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.16em] text-[#000]">
                       Les Frères Drif High School
                     </p>
 
@@ -150,9 +135,18 @@ export function Education() {
                       </span>
                     </p>
 
-                    <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] text-[#7b0d1b]">
-                      Very Good Honors
-                    </p>
+                    <p
+  className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] text-[#9b1c0e]"
+  style={{
+    background: "linear-gradient(90deg, #9b1c0e 0%, #9b1c0e 40%, #fff 50%, #9b1c0e 60%, #9b1c0e 100%)",
+    backgroundSize: "200% auto",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    animation: "shine 2.5s linear infinite",
+  }}
+>
+  Very Good Honors
+</p>
                   </div>
                 </article>
 
@@ -162,7 +156,7 @@ export function Education() {
                 <article className="education-timeline-item relative">
 
                   {/* POINT */}
-                  <div className="education-timeline-dot education-dot-second relative z-10 mb-8 h-[21px] w-[21px] rounded-full border-[5px] border-white bg-[#7b0d1b] shadow-[0_0_0_1px_#7b0d1b]" />
+                  <div className="education-timeline-dot education-dot-second relative z-10 mb-8 h-[21px] w-[21px] rounded-full border-[5px] border-white bg-[#9b1c0e] shadow-[0_0_0_1px_#9b1c0e]" />
 
                   <div className="education-timeline-content">
 
@@ -172,18 +166,15 @@ export function Education() {
                       <div>
 
                         <div className="flex items-center gap-3">
-                          <p className="font-display text-6xl leading-none text-[#7b0d1b]">
+                          <p className="font-display text-6xl leading-none text-[#9b1c0e]">
                             2027
                           </p>
 
-                          <span className="rounded-full bg-[#7b0d1b]/8 px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.18em] text-[#7b0d1b]">
+                          <span className="rounded-full bg-[#9b1c0e]/8 px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.18em] text-[#9b1c0e]">
                             Current
                           </span>
                         </div>
 
-                        <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-400">
-                          Expected June · 2022 — Present
-                        </p>
 
                         <h3
                           className="mt-6 text-4xl leading-[0.95] text-[#171717] md:text-5xl"
@@ -191,12 +182,12 @@ export function Education() {
                         >
                           Computer Systems
                           <br />
-                          <em className="text-[#7b0d1b]">
+                          <em className="text-[#9b1c0e]">
                             Engineering
                           </em>
                         </h3>
 
-                        <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#7b0d1b]">
+                        <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#000]">
                           ESI — Higher National School of Computer Science
                         </p>
 
@@ -225,7 +216,7 @@ export function Education() {
                           ].map((item) => (
                             <span
                               key={item}
-                              className="border border-zinc-200 px-3 py-1.5 text-[8px] uppercase tracking-[0.14em] text-zinc-500 transition-colors hover:border-[#7b0d1b]/30 hover:text-[#7b0d1b]"
+                              className="border border-zinc-200 px-3 py-1.5 text-[8px] uppercase tracking-[0.14em] text-zinc-500 transition-colors hover:border-[#9b1c0e]/30 hover:text-[#9b1c0e]"
                             >
                               {item}
                             </span>
@@ -234,28 +225,30 @@ export function Education() {
                       </div>
 
                       {/* PHOTO */}
-                      <div className="relative hidden md:block">
-                        <div className="relative ml-auto mt-2 h-[250px] w-[195px] rotate-[4deg] bg-white p-[7px] pb-[18px] shadow-[0_10px_24px_rgba(0,0,0,0.14)]">
+<div className="relative hidden md:block">
+  <AnimatedPhoto>
+    <div className="relative ml-auto mt-2 h-[250px] w-[195px] rotate-[4deg] bg-white p-[7px] pb-[18px] shadow-[0_10px_24px_rgba(0,0,0,0.14)]">
 
-                          {/* TAPE */}
-                          <div className="absolute -top-[12px] left-1/2 z-20 h-[25px] w-[70px] -translate-x-1/2 -rotate-[5deg] bg-[#e8dccb]/90 shadow-[0_2px_4px_rgba(0,0,0,0.08)]" />
+      {/* TAPE */}
+      <div className="absolute -top-[12px] left-1/2 z-20 h-[25px] w-[70px] -translate-x-1/2 -rotate-[5deg] bg-[#e8dccb]/90 shadow-[0_2px_4px_rgba(0,0,0,0.08)]" />
 
-                          {/* IMAGE */}
-                          <div className="relative h-full w-full overflow-hidden">
-                            <Image
-                              src="/esi.jpg"
-                              alt="ESI — Higher National School of Computer Science"
-                              fill
-                              className="object-cover"
-                              sizes="195px"
-                            />
-                          </div>
-                        </div>
+      {/* IMAGE */}
+      <div className="relative h-full w-full overflow-hidden">
+        <Image
+          src="/esi.jpg"
+          alt="ESI — Higher National School of Computer Science"
+          fill
+          className="object-cover"
+          sizes="195px"
+        />
+      </div>
+    </div>
 
-                        <p className="mt-5 text-center text-[8px] uppercase tracking-[0.18em] text-zinc-400">
-                          ESI · Algiers
-                        </p>
-                      </div>
+    <p className="mt-5 text-center text-[8px] uppercase tracking-[0.18em] text-zinc-400">
+      ESI · Algiers
+    </p>
+  </AnimatedPhoto>
+</div>
 
                     </div>
                   </div>

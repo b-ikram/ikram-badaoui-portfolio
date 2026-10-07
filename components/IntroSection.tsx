@@ -97,7 +97,7 @@ export function IntroSection() {
           {/* Main image — PC */}
           <div className="absolute left-1/2 top-1/2 z-10 h-[330px] w-[230px] -translate-x-1/2 -translate-y-1/2 rotate-[-2deg] overflow-hidden shadow-[0_20px_50px_rgba(93,10,20,0.15)] sm:h-[390px] sm:w-[275px]">
             <Image
-              src="/PC.png"
+              src="/PC.jpg"
               alt="Ikram working on a computer"
               fill
               className="object-cover"
@@ -106,36 +106,35 @@ export function IntroSection() {
           </div>
 
           {/* Glasses */}
-          <div className="absolute left-[5%] top-[22%] z-20 h-[145px] w-[170px] rotate-[-5deg] overflow-hidden shadow-[0_15px_35px_rgba(93,10,20,0.14)] sm:left-[13%] sm:h-[175px] sm:w-[205px]">
-            <Image
-              src="/glasses.png"
-              alt="Glasses"
-              fill
-              className="object-cover"
-              sizes="205px"
-            />
-          </div>
+<div className="absolute left-[8%] top-[17%] z-20 h-[110px] w-[130px] rotate-[-5deg] overflow-hidden shadow-[0_15px_35px_rgba(93,10,20,0.14)] sm:left-[15%] sm:top-[17%] sm:h-[135px] sm:w-[160px]">
+  <Image
+    src="/glasses.png"
+    alt="Glasses"
+    fill
+    className="object-cover"
+    sizes="160px"
+  />
+</div>
 
-          {/* Coffee */}
-          <div className="absolute bottom-[8%] right-[2%] z-20 h-[190px] w-[210px] rotate-[6deg] sm:right-[9%] sm:h-[220px] sm:w-[240px]">
-            <Image
-              src="/coffee.png"
-              alt="Coffee"
-              fill
-              className="object-contain"
-              sizes="240px"
-            />
-          </div>
-
-          {/* Decorative circle */}
-          <div className="absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#7b0d1b]/10 sm:h-[430px] sm:w-[430px]" />
+{/* Coffee */}
+<div className="absolute bottom-[6%] right-[10%] z-20 h-[145px] w-[160px] rotate-[6deg] sm:right-[18%] sm:h-[170px] sm:w-[185px]">
+  <Image
+    src="/coffee.png"
+    alt="Coffee"
+    fill
+    className="object-contain"
+    sizes="185px"
+  />
+</div>
 
           {/* Small handwritten label */}
           <p
-            className="absolute bottom-0 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap text-xs italic text-ruby/60"
+            className="absolute bottom-0 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap text-xs italic text-[#171717] sm:text-xl"
             style={serif}
           >
-            always learning · always building
+            
+            Powered by coffee, questionable sleep, my trusty glasses, and a very loyal PC
+
           </p>
         </div>
             <div>

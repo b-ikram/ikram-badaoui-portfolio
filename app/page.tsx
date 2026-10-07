@@ -4,15 +4,14 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { IntroSection } from "@/components/IntroSection";
 import { ValuesMarquee } from "@/components/ValuesMarquee";
-import { ProjectExplorer } from "@/components/ProjectExplorer";
 import { ScrollControls } from "@/components/ScrollControls";
 import { Section } from "@/components/Section";
 import { TechIcon } from "@/components/TechIcon";
 import { AboutMe } from "@/components/AboutMe";
 import { Education } from "@/components/Education";
-import { WorkExperience } from "@/components/WorkExperience";
 import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
+import { MyValues } from "@/components/MyValues";
 import {
   achievements,
   contactLinks,
@@ -50,24 +49,8 @@ export default function Home() {
 
         <Projects/>
       <Experience/>
-
-
-      {/* FIXED: Changed id="Qualifications" to lowercase id="qualifications" */}
-      <Section id="trainings" title="Trainings">
-        <div className="portfolio-card border-t-4 border-t-amber-500/70 p-7">
-          <div className="space-y-4">
-           
-
-            {/* List remaining achievements from portfolio.ts */}
-            {achievements.map((item) => (
-              <div key={item} className="flex gap-3 text-sm leading-6 text-zinc-800">
-                <ArrowRight className="mt-1 shrink-0 text-ruby" size={15} />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <ValuesMarquee/>
+      <MyValues/>
 
       <Section id="contact" title="Contact">
         <div className="portfolio-card border-t-4 border-t-ruby p-7">
