@@ -86,9 +86,9 @@ export function IntroSection() {
           </h2>
         </div>
 
-        {/* Editorial collage */}
+        {/* Editorial collage (taller on phone only: h-[540px]) */}
         <div
-          className={`relative mx-auto mt-20 h-[430px] max-w-3xl transition-all duration-[1200ms] delay-150 ease-out sm:h-[500px] ${
+          className={`relative mx-auto mt-20 h-[540px] max-w-3xl transition-all duration-[1200ms] delay-150 ease-out sm:h-[500px] ${
             isVisible
               ? "translate-y-0 scale-100 opacity-100"
               : "translate-y-16 scale-[0.96] opacity-0"
@@ -113,29 +113,29 @@ export function IntroSection() {
             />
           </div>
 
-          {/* Glasses — original desktop position */}
+          {/* Glasses — top-left on phone, original position from sm: up */}
           <div
-            className="absolute left-[8%] top-[17%] z-20 h-[110px] w-[130px] rotate-[-5deg] overflow-hidden shadow-[0_15px_35px_rgba(93,10,20,0.14)] animate-float-glasses sm:left-[15%] sm:top-[17%] sm:h-[135px] sm:w-[160px]"
+            className="absolute left-[2%] top-[3%] z-20 h-[90px] w-[105px] rotate-[-5deg] overflow-hidden shadow-[0_15px_35px_rgba(93,10,20,0.14)] animate-float-glasses sm:left-[15%] sm:top-[17%] sm:h-[135px] sm:w-[160px]"
           >
             <Image
               src="/glasses.png"
               alt="Glasses"
               fill
               className="object-cover"
-              sizes="160px"
+              sizes="(max-width: 640px) 105px, 160px"
             />
           </div>
 
-          {/* Coffee — original desktop position */}
+          {/* Coffee — bottom-right on phone, original position from sm: up */}
           <div
-            className="absolute bottom-[6%] right-[10%] z-20 h-[145px] w-[160px] rotate-[6deg] animate-float-coffee sm:right-[18%] sm:h-[170px] sm:w-[185px]"
+            className="absolute bottom-[34px] right-[2%] z-20 h-[95px] w-[105px] rotate-[6deg] animate-float-coffee sm:bottom-[6%] sm:right-[18%] sm:h-[170px] sm:w-[185px]"
           >
             <Image
               src="/coffee.png"
               alt="Coffee"
               fill
               className="object-contain"
-              sizes="185px"
+              sizes="(max-width: 640px) 105px, 185px"
             />
           </div>
 
