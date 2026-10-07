@@ -9,10 +9,6 @@ const serif = {
   fontFamily: '"Playfair Display", "Cormorant Garamond", Georgia, serif',
 };
 
-/**
- * Two photos, side by side. `match` finds the entry in `experiences`
- * (checks role + place, case-insensitive).
- */
 const photos = [
   {
     src: "/sonatrach.jpg",
@@ -30,32 +26,42 @@ const photos = [
   },
 ];
 
-type ExtraFields = { repository?: string; article?: string };
+type ExtraFields = {
+  repository?: string;
+  article?: string;
+};
 
 export function Experience() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const activePhoto = activeIndex !== null ? photos[activeIndex] : null;
+  const activePhoto =
+    activeIndex !== null ? photos[activeIndex] : null;
 
   const baseExperience = activePhoto
     ? experiences.find((e) =>
-        `${e.role} ${e.place}`.toLowerCase().includes(activePhoto.match)
+        `${e.role} ${e.place}`
+          .toLowerCase()
+          .includes(activePhoto.match)
       )
     : null;
+
   const activeExperience = baseExperience as
     | (typeof baseExperience & ExtraFields)
     | null
     | undefined;
 
-  // Close popup with Escape + lock page scroll while open
   useEffect(() => {
     if (activeIndex === null) return;
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setActiveIndex(null);
     };
+
     document.addEventListener("keydown", onKey);
+
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
@@ -65,17 +71,20 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden bg-[#faf7ee] px-6 py-20 sm:px-10 md:px-16 md:py-28"
+      className="relative overflow-hidden bg-[#faf7ee] px-5 py-20 sm:px-8 md:px-12 lg:px-16 md:py-28"
     >
       <div className="mx-auto max-w-7xl">
+
         {/* HEADER */}
-        <div className="relative mb-16">
+        <div className="relative mb-12 sm:mb-16">
           <div
             className="relative inline-block pt-[0.9em]"
-            style={{ fontSize: "clamp(2.2rem, 5vw, 5rem)" }}
+            style={{
+              fontSize: "clamp(2.4rem, 7vw, 5rem)",
+            }}
           >
             <div
-              className="pointer-events-none absolute -left-[0.04em] -top-[0.05em] z-20 -rotate-[50deg] origin-bottom-left"
+              className="pointer-events-none absolute z-20 -rotate-[50deg] origin-bottom-left"
               style={{
                 left: "0.35em",
                 bottom: "calc(100% - 1.2em)",
@@ -85,7 +94,7 @@ export function Experience() {
             </div>
 
             <h2
-              className="relative z-10 ml-[0.75em] whitespace-nowrap text-[#171717]"
+              className="relative z-10 ml-[0.75em] text-[#171717]"
               style={{
                 ...serif,
                 fontSize: "1em",
@@ -98,85 +107,172 @@ export function Experience() {
           </div>
         </div>
 
-        <div className="mx-auto flex max-w-7xl items-start justify-between gap-14 px-6 sm:px-10 md:px-16">
+        {/* MAIN CONTENT */}
+        <div className="flex flex-col gap-14 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
 
-  {/* Photos */}
-  <div className="grid w-full max-w-[780px] grid-cols-2 gap-5 sm:gap-7">
-    {photos.map((photo, i) => (
-      <button
-        key={photo.src}
-        type="button"
-        onClick={() => setActiveIndex(i)}
-        aria-label={`Open details: ${photo.title}`}
-        className="group w-full cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9b1c0e] focus-visible:ring-offset-4 focus-visible:ring-offset-[#faf7ee]"
-      >
-        <div className="relative aspect-[4/3] w-full overflow-hidden shadow-[0_18px_40px_rgba(93,10,20,0.15)]">
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 640px) 45vw, 380px"
-          />
-
-      
-        </div>
-
-        <div className="mt-4">
-          <p
-            className="text-sm leading-tight text-[#171717] sm:text-lg"
-            style={serif}
+          {/* PHOTOS */}
+          <div
+            className="
+              grid w-full
+              grid-cols-1
+              gap-12
+              sm:grid-cols-2 sm:gap-7
+              lg:max-w-[780px]
+            "
           >
-            {photo.title}
-          </p>
+            {photos.map((photo, i) => (
+              <button
+                key={photo.src}
+                type="button"
+                onClick={() => setActiveIndex(i)}
+                aria-label={`Open details: ${photo.title}`}
+                className="
+                  group
+                  w-full
+                  cursor-pointer
+                  text-left
+                  focus:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-[#9b1c0e]
+                  focus-visible:ring-offset-4
+                  focus-visible:ring-offset-[#faf7ee]
+                "
+              >
+                {/* IMAGE */}
+                <div
+                  className="
+                    relative
+                    aspect-[4/3]
+                    w-full
+                    overflow-hidden
+                    shadow-[0_18px_40px_rgba(93,10,20,0.15)]
+                  "
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="
+                      (max-width: 639px) 100vw,
+                      (max-width: 1023px) 50vw,
+                      390px
+                    "
+                  />
+                </div>
 
-          <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[#9b1c0e] sm:text-[10px]">
-            {photo.subtitle}
-          </p>
+                {/* TEXT */}
+                <div className="mt-4 pr-2 sm:mt-5">
+                  <p
+                    className="
+                      text-lg
+                      leading-[1.15]
+                      text-[#171717]
+                      sm:text-lg
+                      md:text-xl
+                    "
+                    style={serif}
+                  >
+                    {photo.title}
+                  </p>
+
+                  <p
+                    className="
+                      mt-2
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      tracking-[0.18em]
+                      text-[#9b1c0e]
+                    "
+                  >
+                    {photo.subtitle}
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* QUOTE */}
+          <div className="w-full lg:w-auto lg:max-w-[360px] lg:pt-2">
+            <h3
+              className="
+                text-center
+                text-[#9b1c0e]
+                lg:text-right
+              "
+              style={{
+                fontFamily:
+                  '"Abril Fatface", "Playfair Display", Georgia, serif',
+                fontWeight: 900,
+                fontSize: "clamp(2.8rem, 8vw, 5rem)",
+                lineHeight: "0.95",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              <span className="block">believe</span>
+              <span className="block">today</span>
+              <span className="block">achieve</span>
+              <span className="block">tomorrow</span>
+            </h3>
+          </div>
         </div>
-      </button>
-    ))}
-  </div>
-
-  {/* Quote */}
-  <h3
-    className="shrink-0 translate-x-[20px] translate-y-[-10px] text-right text-[#9b1c0e]"
-    style={{
-      fontFamily: '"Abril Fatface", "Playfair Display", Georgia, serif',
-      fontWeight: 900,
-      fontSize: "clamp(2.8rem, 5.5vw, 5rem)",
-      lineHeight: "0.95",
-      letterSpacing: "-0.02em",
-      marginRight: "-2rem",
-    }}
-  >
-    <span className="block">believe</span>
-    <span className="block">today</span>
-    <span className="block">achieve</span>
-    <span className="block">tomorrow</span>
-  </h3>
-
-</div>
-
       </div>
 
       {/* POPUP */}
       {activePhoto && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#171717]/60 p-4 backdrop-blur-sm"
+          className="
+            fixed
+            inset-0
+            z-50
+            flex
+            items-center
+            justify-center
+            bg-[#171717]/60
+            p-4
+            backdrop-blur-sm
+          "
           onClick={() => setActiveIndex(null)}
           role="dialog"
           aria-modal="true"
         >
           <div
-            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-[#faf7ee] shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
+            className="
+              relative
+              max-h-[90vh]
+              w-full
+              max-w-2xl
+              overflow-y-auto
+              bg-[#faf7ee]
+              shadow-[0_30px_80px_rgba(0,0,0,0.35)]
+            "
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setActiveIndex(null)}
               aria-label="Close"
-              className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white text-xl leading-none text-[#9b1c0e] shadow transition hover:bg-[#9b1c0e] hover:text-white"
+              className="
+                absolute
+                right-3
+                top-3
+                z-10
+                flex
+                h-9
+                w-9
+                items-center
+                justify-center
+                rounded-full
+                bg-white
+                text-xl
+                leading-none
+                text-[#9b1c0e]
+                shadow
+                transition
+                hover:bg-[#9b1c0e]
+                hover:text-white
+              "
             >
               ×
             </button>
@@ -191,7 +287,7 @@ export function Experience() {
               />
             </div>
 
-            <div className="p-6 sm:p-8">
+            <div className="p-5 sm:p-8">
               {activeExperience ? (
                 <>
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#9b1c0e]">
@@ -199,7 +295,7 @@ export function Experience() {
                   </p>
 
                   <h3
-                    className="mt-2 text-3xl leading-tight tracking-[-0.02em] text-[#171717] sm:text-4xl"
+                    className="mt-2 text-2xl leading-tight tracking-[-0.02em] text-[#171717] sm:text-4xl"
                     style={serif}
                   >
                     {activeExperience.role}
@@ -215,7 +311,7 @@ export function Experience() {
                     {activeExperience.points.map((point) => (
                       <li
                         key={point}
-                        className="flex gap-4 text-sm leading-7 text-[#171717]/80"
+                        className="flex gap-3 text-sm leading-7 text-[#171717]/80"
                       >
                         <span className="mt-[11px] h-1 w-1 shrink-0 bg-[#9b1c0e]" />
                         <span>{point}</span>
@@ -223,24 +319,56 @@ export function Experience() {
                     ))}
                   </ul>
 
-                  {(activeExperience.article || activeExperience.repository) && (
+                  {(activeExperience.article ||
+                    activeExperience.repository) && (
                     <div className="mt-7 flex flex-wrap gap-3">
                       {activeExperience.article && (
                         <a
                           href={activeExperience.article}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 bg-[#9b1c0e] px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#9b1c0e]"
+                          className="
+                            inline-flex
+                            items-center
+                            gap-2
+                            bg-[#9b1c0e]
+                            px-5
+                            py-2.5
+                            text-[11px]
+                            font-bold
+                            uppercase
+                            tracking-[0.16em]
+                            text-white
+                            transition
+                            hover:opacity-90
+                          "
                         >
                           Read the article ↗
                         </a>
                       )}
+
                       {activeExperience.repository && (
                         <a
                           href={activeExperience.repository}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 border border-[#9b1c0e] px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#9b1c0e] transition hover:bg-[#9b1c0e] hover:text-white"
+                          className="
+                            inline-flex
+                            items-center
+                            gap-2
+                            border
+                            border-[#9b1c0e]
+                            px-5
+                            py-2.5
+                            text-[11px]
+                            font-bold
+                            uppercase
+                            tracking-[0.16em]
+                            text-[#9b1c0e]
+                            transition
+                            hover:bg-[#9b1c0e]
+                            hover:text-white
+                          "
                         >
                           View repository ↗
                         </a>
