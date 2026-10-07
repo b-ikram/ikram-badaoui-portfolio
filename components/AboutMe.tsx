@@ -85,55 +85,61 @@ export function AboutMe() {
 
 
         {/* =====================================================
-            INTRO + TAPED PHOTO
-        ===================================================== */}
-        <div className="relative mb-12 max-w-none">
+    INTRO + TAPED PHOTO
+===================================================== */}
+<div className="relative mb-12">
 
-          {/* Taped photo */}
-          <div
-            className={`
-              absolute right-0 -top-12 z-20
-              h-[190px] w-[150px]
-              rotate-[6deg] bg-white p-[9px] pb-[25px]
-              shadow-[0_12px_28px_rgba(0,0,0,0.18)]
-              transition-all duration-[1000ms] delay-200 ease-out
-              sm:right-4 sm:-top-14 sm:h-[230px] sm:w-[180px]
-              sm:p-[10px] sm:pb-[28px]
-              md:right-8 md:-top-16 md:h-[260px] md:w-[205px]
-              ${
-                isVisible
-                  ? "translate-y-0 rotate-[6deg] opacity-100"
-                  : "-translate-y-8 rotate-[11deg] opacity-0"
-              }
-            `}
-          >
-            {/* Tape */}
-            <div
-              className="
-                absolute -top-[15px] left-1/2 z-40
-                h-[30px] w-[85px]
-                -translate-x-1/2 -rotate-[4deg]
-                bg-[#e8dccb]/90
-                shadow-[0_2px_5px_rgba(0,0,0,0.1)]
-                sm:-top-[17px] sm:h-[34px] sm:w-[100px]
-              "
-            />
+  {/* Taped photo */}
+  <div
+    className={`
+      relative ml-auto mr-2 mb-10
+      h-[190px] w-[150px]
+      rotate-[6deg] bg-white p-[9px] pb-[25px]
+      shadow-[0_12px_28px_rgba(0,0,0,0.18)]
+      transition-all duration-[1000ms] delay-200 ease-out
 
-            <div className="relative h-full w-full overflow-hidden">
-              <Image
-                src="/ikram3.jpg"
-                alt="Ikram"
-                fill
-                priority
-                className="object-cover"
-                sizes="205px"
-              />
-            </div>
-          </div>
+      sm:h-[230px] sm:w-[180px]
+      sm:p-[10px] sm:pb-[28px]
 
-          {/* Intro paragraphs */}
-          <div className="relative z-10 pr-20 sm:pr-24 md:pr-28" />
-        </div>
+      md:absolute md:right-8 md:top-[-4rem]
+      md:mb-0
+      md:h-[260px] md:w-[205px]
+
+      ${
+        isVisible
+          ? "translate-y-0 rotate-[6deg] opacity-100"
+          : "-translate-y-8 rotate-[11deg] opacity-0"
+      }
+    `}
+  >
+    {/* Tape */}
+    <div
+      className="
+        absolute -top-[15px] left-1/2 z-40
+        h-[30px] w-[85px]
+        -translate-x-1/2 -rotate-[4deg]
+        bg-[#e8dccb]/90
+        shadow-[0_2px_5px_rgba(0,0,0,0.1)]
+
+        sm:-top-[17px] sm:h-[34px] sm:w-[100px]
+      "
+    />
+
+    <div className="relative h-full w-full overflow-hidden">
+      <Image
+        src="/ikram3.jpg"
+        alt="Ikram"
+        fill
+        priority
+        className="object-cover"
+        sizes="205px"
+      />
+    </div>
+  </div>
+
+  {/* Intro paragraphs */}
+  <div className="relative z-10 pr-0 sm:pr-24 md:pr-28" />
+</div>
 
 
         {/* =====================================================
