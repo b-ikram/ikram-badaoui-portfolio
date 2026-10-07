@@ -97,7 +97,7 @@ export function IntroSection() {
           {/* Main image — PC */}
           <div className="absolute left-1/2 top-1/2 z-10 h-[330px] w-[230px] -translate-x-1/2 -translate-y-1/2 rotate-[-2deg] overflow-hidden shadow-[0_20px_50px_rgba(93,10,20,0.15)] sm:h-[390px] sm:w-[275px]">
             <Image
-              src="/PC.jpg"
+              src="/pc.jpg"
               alt="Ikram working on a computer"
               fill
               className="object-cover"
