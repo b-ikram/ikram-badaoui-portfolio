@@ -81,7 +81,7 @@ export function IntroSection() {
   meet
 </em>
 
-              <span>BOLD SYSTEMS</span>
+              <span>ENGINEERING</span>
             </span>
           </h2>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { experiences } from "@/data/portfolio";
 import { AnimatedMy } from "./AnimatedMy";
 
@@ -32,7 +32,9 @@ type ExtraFields = {
 };
 
 export function Experience() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+const [activeIndex, setActiveIndex] = useState<number | null>(null);
+const [isVisible, setIsVisible] = useState(false);
+const sectionRef = useRef<HTMLElement>(null);
 
   const activePhoto =
     activeIndex !== null ? photos[activeIndex] : null;
@@ -49,6 +51,27 @@ export function Experience() {
     | (typeof baseExperience & ExtraFields)
     | null
     | undefined;
+useEffect(() => {
+  const section = sectionRef.current;
+  if (!section) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    },
+    {
+      threshold: 0.05,
+      rootMargin: "0px 0px -5% 0px",
+    }
+  );
+
+  observer.observe(section);
+
+  return () => observer.disconnect();
+}, []);
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -70,13 +93,20 @@ export function Experience() {
 
   return (
     <section
-      id="experience"
-      className="relative overflow-hidden bg-[#faf7ee] px-5 py-20 sm:px-8 md:px-12 lg:px-16 md:py-28"
-    >
+  ref={sectionRef}
+  id="experience"
+  className="relative overflow-hidden bg-[#faf7ee] px-5 py-20 sm:px-8 md:px-12 lg:px-16 md:py-28"
+>
       <div className="mx-auto max-w-7xl">
 
         {/* HEADER */}
-        <div className="relative mb-12 sm:mb-16">
+        <div
+  className={`relative mb-12 transition-all duration-1000 ease-out sm:mb-16 ${
+    isVisible
+      ? "translate-y-0 opacity-100"
+      : "translate-y-10 opacity-0"
+  }`}
+>
           <div
             className="relative inline-block pt-[0.9em]"
             style={{
@@ -112,14 +142,16 @@ export function Experience() {
 
           {/* PHOTOS */}
           <div
-            className="
-              grid w-full
-              grid-cols-1
-              gap-12
-              sm:grid-cols-2 sm:gap-7
-              lg:max-w-[780px]
-            "
-          >
+  className={`grid w-full transition-all duration-[1200ms] delay-150 ease-out ${
+    isVisible
+      ? "translate-y-0 opacity-100"
+      : "translate-y-12 opacity-0"
+  }
+  grid-cols-1
+  gap-12
+  sm:grid-cols-2 sm:gap-7
+  lg:max-w-[780px]`}
+>
             {photos.map((photo, i) => (
               <button
                 key={photo.src}
@@ -194,8 +226,14 @@ export function Experience() {
           </div>
 
           {/* QUOTE */}
-<div className="w-full lg:w-auto lg:max-w-[360px] lg:pt-2">
-  <h3
+<div
+  className={`w-full transition-all duration-[1100ms] delay-300 ease-out lg:w-auto lg:max-w-[360px] lg:pt-2 ${
+    isVisible
+      ? "translate-x-0 opacity-100"
+      : "translate-x-10 opacity-0"
+  }`}
+>
+    <h3
     className="ml-auto w-fit text-right text-[#9b1c0e]"
     style={{
       fontFamily:

@@ -13,6 +13,11 @@ import {
   Trophy
 } from "lucide-react";
 
+export const contactData = {
+  email: "ikrambadaoui2004@gmail.com",
+};
+
+
 export const profile = {
   name: "Ikram Badaoui",
   title: "Computer Systems Engineering Student",

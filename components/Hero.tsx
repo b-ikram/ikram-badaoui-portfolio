@@ -103,8 +103,7 @@ export function Hero() {
     >
       {/* Main title */}
       {/* Curved main title */}
-<div className="relative z-0 mx-auto mt-28 h-[210px] w-full max-w-[1400px] sm:mt-24">
-    <svg
+<div className="relative z-0 mx-auto mt-12 h-[190px] w-full max-w-[1400px] sm:mt-24 sm:h-[210px]">    <svg
     viewBox="0 0 1000 210"
     className="absolute inset-0 h-full w-full overflow-visible"
     preserveAspectRatio="xMidYMid meet"
@@ -132,17 +131,17 @@ export function Hero() {
     </text>
   </svg>
 </div>
-
-      {/* Cutout photo */}
-        <div className="pointer-events-none absolute bottom-0 left-1/2 z-10 h-[74%] w-[min(92vw,640px)] -translate-x-1/2 sm:h-[80%]">        <Image
-          src="/ikram.png"
-          alt="Ikram Badaoui"
-          fill
-          priority
-          className="object-contain object-bottom drop-shadow-[0_20px_40px_rgba(155,28,14,0.20)]"
-          sizes="(max-width: 768px) 92vw, 640px"
-        />
-      </div>
+{/* Cutout photo */}
+<div className="pointer-events-none absolute bottom-0 left-1/2 z-10 h-[68%] w-[min(92vw,640px)] -translate-x-1/2 sm:h-[80%]">
+  <Image
+    src="/ikram.png"
+    alt="Ikram Badaoui"
+    fill
+    priority
+    className="object-contain object-bottom drop-shadow-[0_20px_40px_rgba(155,28,14,0.20)]"
+    sizes="(max-width: 768px) 92vw, 640px"
+  />
+</div>
 
       {/* Desktop annotations */}
       <div className="pointer-events-none absolute inset-x-0 top-[36%] z-20 mx-auto hidden max-w-7xl px-8 md:block">
