@@ -194,28 +194,24 @@ export function Experience() {
           </div>
 
           {/* QUOTE */}
-          <div className="w-full lg:w-auto lg:max-w-[360px] lg:pt-2">
-            <h3
-              className="
-                text-center
-                text-[#9b1c0e]
-                lg:text-right
-              "
-              style={{
-                fontFamily:
-                  '"Abril Fatface", "Playfair Display", Georgia, serif',
-                fontWeight: 900,
-                fontSize: "clamp(2.8rem, 8vw, 5rem)",
-                lineHeight: "0.95",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              <span className="block">believe</span>
-              <span className="block">today</span>
-              <span className="block">achieve</span>
-              <span className="block">tomorrow</span>
-            </h3>
-          </div>
+<div className="w-full lg:w-auto lg:max-w-[360px] lg:pt-2">
+  <h3
+    className="ml-auto w-fit text-right text-[#9b1c0e]"
+    style={{
+      fontFamily:
+        '"Abril Fatface", "Playfair Display", Georgia, serif',
+      fontWeight: 900,
+      fontSize: "clamp(2.8rem, 8vw, 5rem)",
+      lineHeight: "0.95",
+      letterSpacing: "-0.02em",
+    }}
+  >
+    <span className="block">believe</span>
+    <span className="block">today</span>
+    <span className="block">achieve</span>
+    <span className="block">tomorrow</span>
+  </h3>
+</div>
         </div>
       </div>
 
