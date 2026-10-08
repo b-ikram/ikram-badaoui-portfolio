@@ -54,7 +54,7 @@ export default function Home() {
 
       <ContactMe/>
 
-      <Footer/>
+      <Footer github={profile.github} linkedin={profile.linkedin} />
     </main>
   );
 }
