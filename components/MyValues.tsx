@@ -115,7 +115,7 @@ export function MyValues() {
   <br className="sm:hidden" />
   {" "}stand tall and bloom with strength
 </p>
-      </div>
+      </div> 
     </section>
   );
 }
