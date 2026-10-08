@@ -108,11 +108,13 @@ export function MyValues() {
 
         {/* Quote */}
         <p
-          className="relative z-10 mt-12 text-center text-lg italic text-[#171717] sm:text-xl"
-          style={serif}
-        >
-          Like the Gladiolus, stand tall and bloom with strength
-        </p>
+  className="relative z-10 mt-20 pl-[17%] pr-4 text-left text-lg italic text-[#171717] sm:pl-0 sm:pr-0 sm:text-center sm:text-xl"
+  style={serif}
+>
+  Like the Gladiolus,
+  <br className="sm:hidden" />
+  {" "}stand tall and bloom with strength
+</p>
       </div>
     </section>
   );
