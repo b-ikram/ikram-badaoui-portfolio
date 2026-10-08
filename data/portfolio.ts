@@ -37,7 +37,6 @@ export const navItems = [
   { label: "projects", targetId: "projects" },
   { label: "experience", targetId: "experience" },
   { label: "values", targetId: "my-values" },
-  { label: "design", targetId: "about" },
   { label: "contact", targetId: "contact" },
 ];
 export const focusAreas = [

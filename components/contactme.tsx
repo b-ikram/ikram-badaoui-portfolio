@@ -99,7 +99,7 @@ export function ContactMe() {
   };
 
   return (
-    <section ref={rootRef} className="cm-root">
+    <section ref={rootRef} id="contact" className="cm-root">
 
       {/* ---------- Header (cream) ---------- */}
       <header className="cm-top" style={{ position: "relative" }}>
